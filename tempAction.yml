@@ -7,18 +7,12 @@ branding:
   icon: sunrise
 
 inputs:
-  cordova-version:
-    description: Version range or exact version of Cordova to use
-    default: '10'
-  install-java:
-    description: Whether to install Java
-    default: true
   exec:
     description: "Apache Cordova command to execute"
     required: true
 
 runs:
-  using: "node12"
-  image: "dist/index.js"
+  using: "docker"
+  image: "Dockerfile"
   args:
     - ${{ inputs.exec }}
